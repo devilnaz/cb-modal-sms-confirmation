@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="/css/modules/everything-module.css">
+
+<div class="everything-module">
+  <div id="js_warning_module_ground" class="everything-module__ground">
+    <div class="everything-module__inner" href="#">
+      <div id="js_warning_module_block" class="everything-module__block">
+        <button class="everything-module__close js_warning_module_close">
+          <img class="everything-module__close-image" src="/images/modules/everything-module/close_modal.png" alt="icon: close">
+        </button>
+        <div class="everything-module__content everything-module__content_center">
+          <h3 class="everything-module__title">
+            Создание аккаунтов временно приостановлено!
+          </h3>
+          <img class="everything-module__image" src="/images/modules/everything-module/gear_icon.svg">
+          <p class="everything-module__description">
+            По данному функционалу ведутся технические работы, будем рады Вас видеть через некоторое время
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+function warningModule() {
+const moduleGround = document.querySelector('#js_warning_module_ground');
+
+  if (moduleGround) {
+    const body = document.querySelector('body');
+    const closeBtns = document.querySelectorAll('.js_warning_module_close');
+    const moduleBlock = document.querySelector('#js_warning_module_block');
+
+    function openModule() {
+      body.classList.add('body_lock');
+      moduleGround.classList.add('everything-module__ground_open');
+      moduleBlock.classList.add('everything-module__block_open');
+    }
+
+    openModule();
+
+    if (closeBtns.length) {
+      closeBtns.forEach(function(closeBtn) {
+        closeBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          body.classList.remove('body_lock');
+          moduleGround.classList.remove('everything-module__ground_open');
+          moduleBlock.classList.remove('everything-module__block_open');
+        });
+      });
+    }
+  }
+  
+};
+
+</script>
