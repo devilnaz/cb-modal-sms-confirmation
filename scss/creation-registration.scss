@@ -1,0 +1,31 @@
+@import './modules/fonts-standart';
+@import './modules/colors';
+
+// переопределение стилей
+.modal-module {
+  &__block_creation-registration {
+    max-width: 500px;
+  }
+}
+
+$browser-font-size: 16;
+
+@mixin em($font-size, $line-height: $font-size, $default: $browser-font-size) {
+  font-size: calc(ceil(calc($font-size/$default * 1000)) / 1000) + em;
+  line-height: calc(ceil(calc($line-height/$font-size * 1000)) / 1000) + em;
+}
+
+// @function em($pixels, $context: $browser-context) {
+//   @return #{$pixels/$context}em;
+// }
+
+.creation-registration {
+  font: 400 1rem 'Rubik';
+}
+
+.write-data {
+  &__title {
+    font-weight: 500;
+    @include em(24, 33.6);
+  }
+}

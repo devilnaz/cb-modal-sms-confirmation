@@ -9,14 +9,14 @@
 <body>
   
   <link rel="stylesheet" href="./css/modal-module.css">
-  <link rel="stylesheet" href="./css/sms-confirmation.css">
+  <link rel="stylesheet" href="./css/creation-registration.css">
 
   <button onclick="openModalModule(this)" data-name="modal_warning">вызываем окно</button>
   
   <div id="modal_warning" class="modal-module">
     <div class="modal-module__ground">
       <div class="modal-module__inner" href="#">
-        <div class="modal-module__block">
+        <div class="modal-module__block modal-module__block_creation-registration">
           <button class="modal-module__close">
             <svg class="modal-module__close-image" height="14px" version="1.1" viewBox="0 0 14 14" width="14px" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
               <title/>
@@ -35,6 +35,8 @@
             <div class="creation-registration">
               <div class="creation-registration__data-write">
                 <div class="write-data">
+                  <h5 class="write-data__title">Для создания аккаунта осталось подтвердить данные</h5>
+                  <p class="write-data__description">Укажите действительные данные</p>
                   <input type="text" class="write-data__email">
                   <input type="text" class="write-data__phone">
                   <button class="write-data__btn">Подтвердить</button>
