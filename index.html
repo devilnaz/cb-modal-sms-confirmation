@@ -50,7 +50,7 @@
                   <h5 class="confirmation-sms__title">Подтвердите данные</h5>
                   <p class="confirmation-sms__description">Мы отправили SMS c кодом на номер <br><span class="confirmation-sms__description_phone">89063338079</span></p>
                   <div class="confirmation-sms__wrapper-code">
-                    <input class="cb-input-module confirmation-sms__code" type="text" maxlength="4" placeholder="4758" onkeydown="return ( event.ctrlKey || event.altKey 
+                    <input class="cb-input-module confirmation-sms__code" type="text" maxlength="4" placeholder="____" onkeydown="return ( event.ctrlKey || event.altKey 
                     || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
                     || (95<event.keyCode && event.keyCode<106)
                     || (event.keyCode==8) || (event.keyCode==9) 
@@ -62,7 +62,7 @@
                   </div>
                   <p class="confirmation-sms__description confirmation-sms__description_timer">SMS придёт в течение <span class="confirmation-sms__description_timer">01:59</span></p>
                   <div class="confirmation-sms__wrapper-btn">
-                    <button class="cb-btn-module cb-btn-module_hover-dark confirmation-sms__btn">Продолжить</button>
+                    <button id="js_btn_confirmation_sms" class="cb-btn-module cb-btn-module_disabled cb-btn-module_hover-dark confirmation-sms__btn">Продолжить</button>
                   </div>
                   <div class="confirmation-sms__wrapper-link confirmation-sms__wrapper-link_change-num">
                     <button class="cb-link-module confirmation-sms__btn" onclick="goSetData()">Изменить номер</button>

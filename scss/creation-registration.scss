@@ -63,8 +63,8 @@ $browser-font-size: 16;
   @include em(16, 21.79);
   font-family: 'open_sanssemibold';
   padding: em(12, 16);
-  border: 2px solid $main;
   border-radius: em(8, 16);
+  border: 2px solid $main;
   background-color: $main;
   color: $white;
   max-width: 318px;
@@ -73,6 +73,13 @@ $browser-font-size: 16;
 }
 .cb-btn-module:hover {
   cursor: pointer;
+}
+.cb-btn-module_disabled {
+  border-color: transparent;
+  background-color: rgba($main, .65);
+}
+.cb-btn-module_disabled:hover {
+  cursor: default;
 }
 .cb-btn-module_hover-light:hover {
   border-color: transparent;
@@ -125,7 +132,14 @@ $browser-font-size: 16;
     text-align: center;
     letter-spacing: em(8, 24);
     max-width: none;
-    width: 150px;
+    width: 156px;
+    border: 2px solid #EAEAEA;
+    padding: em(11, 24) em(24, 20) em(9, 24);
+  }
+  &__code:focus {
+    outline: none;
+    border: 2px solid rgba(208, 186, 101, 0.6);
+    box-shadow: rgb(254 218 78) 0px 0px 10px;
   }
   &__code::placeholder {
     color: rgba($grey, .65);
