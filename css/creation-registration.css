@@ -52,7 +52,6 @@
 }
 .modal-module__block_creation-registration {
   max-width: 420px;
-  min-height: 378px;
 }
 
 .creation-registration {
@@ -174,7 +173,7 @@
   margin: 0;
   font-family: "open_sansregular";
   color: rgba(74, 85, 104, 0.65);
-  margin-top: 1.5em;
+  margin-top: 1.5em !important;
   text-align: center;
 }
 .confirmation-sms__description_phone {
@@ -185,16 +184,15 @@
   line-height: 1.5em;
   margin: 0;
   color: rgba(74, 85, 104, 0.65);
-  margin-top: 0.625em;
+  margin-top: 0.625em !important;
 }
 .confirmation-sms__code {
   font-size: 1.5em;
   line-height: 1.334em;
   margin: 0;
-  text-align: center;
-  letter-spacing: 0.334em;
+  word-spacing: 0.25em;
   max-width: none;
-  width: 156px;
+  width: 155px;
   border: 2px solid #EAEAEA;
   padding: 0.459em 1.2em 0.375em;
 }
@@ -205,12 +203,18 @@
 }
 .confirmation-sms__code::-moz-placeholder {
   color: rgba(74, 85, 104, 0.65);
+  word-spacing: 0.25em;
+  text-align: center;
 }
 .confirmation-sms__code:-ms-input-placeholder {
   color: rgba(74, 85, 104, 0.65);
+  word-spacing: 0.25em;
+  text-align: center;
 }
 .confirmation-sms__code::placeholder {
   color: rgba(74, 85, 104, 0.65);
+  word-spacing: 0.25em;
+  text-align: center;
 }
 .confirmation-sms__wrapper-code {
   margin-top: 3em;
@@ -224,10 +228,11 @@
   margin-top: 3em;
   text-align: center;
 }
-.confirmation-sms__wrapper-link {
-  margin-top: 1.5em;
+.confirmation-sms__wrapper_send-again {
+  margin-top: 0.75em;
   text-align: center;
 }
-.confirmation-sms__wrapper-link_change-num {
+.confirmation-sms__wrapper_change-num {
   margin-top: 0.75em;
+  text-align: center;
 }/*# sourceMappingURL=creation-registration.css.map */

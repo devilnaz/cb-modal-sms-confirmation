@@ -9,7 +9,6 @@ $browser-font-size: 16;
 .modal-module {
   &__block_creation-registration {
     max-width: 420px;
-    min-height: 378px;
   }
 }
 
@@ -116,7 +115,7 @@ $browser-font-size: 16;
     @include em(16, 24);
     font-family: 'open_sansregular';
     color: rgba($grey, .65);
-    margin-top: em(24, 16);
+    margin-top: em(24, 16) !important;
     text-align: center;
   }
   &__description_phone {
@@ -126,14 +125,15 @@ $browser-font-size: 16;
   &__description_timer {
     @include em(16, 24);
     color: rgba($grey, .65);
-    margin-top: em(10, 16);
+    margin-top: em(10, 16) !important;
   }
   &__code {
     @include em(24, 32);
-    text-align: center;
-    letter-spacing: em(8, 24);
+    // text-align: center;
+    // letter-spacing: em(8, 24);
+    word-spacing: em(6, 24);
     max-width: none;
-    width: 156px;
+    width: 155px;
     border: 2px solid #EAEAEA;
     padding: em(11, 24) em(24, 20) em(9, 24);
   }
@@ -144,6 +144,8 @@ $browser-font-size: 16;
   }
   &__code::placeholder {
     color: rgba($grey, .65);
+    word-spacing: em(6, 24);
+    text-align: center;
   }
   &__wrapper-code {
     margin-top: em(48);
@@ -158,11 +160,12 @@ $browser-font-size: 16;
     margin-top: em(48);
     text-align: center;
   }
-  &__wrapper-link {
-    margin-top: em(24);
+  &__wrapper_send-again {
+    margin-top: em(12);
     text-align: center;
   }
-  &__wrapper-link_change-num {
+  &__wrapper_change-num {
     margin-top: em(12);
+    text-align: center;
   }
 }

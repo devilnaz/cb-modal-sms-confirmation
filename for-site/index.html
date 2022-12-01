@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Модуль</title>
-</head>
-<body>
-  
-  
-  
-  
-  <link rel="stylesheet" href="./css/modal-module.css">
-  <link rel="stylesheet" href="./css/creation-registration.css">
+  <link rel="stylesheet" href="/css/modal-module.css">
+  <link rel="stylesheet" href="/css/creation-registration.css">
 
   <div id="modal_sms_confirmation" class="modal-module">
     <div class="modal-module__ground">
@@ -37,12 +24,12 @@
               <div data-visibility="js_hide" class="creation-registration__sms-confirmation">
                 <div class="confirmation-sms">
                   <h5 class="confirmation-sms__title">Подтвердите данные</h5>
-                  <p class="confirmation-sms__description">Мы отправили SMS c кодом на номер <br><span id="js_phone_line" class="confirmation-sms__description_phone">89063338079</span></p>
+                  <p class="confirmation-sms__description">Мы отправили SMS c кодом на номер <br><span id="js_phone_line" class="confirmation-sms__description_phone">89999999999</span></p>
                   <div class="confirmation-sms__wrapper-code">
                     <input id="js_code_input" class="cb-input-module confirmation-sms__code" type="text"  placeholder="_ _ _ _">
                   </div>
                   <div id="js_send_again" class="confirmation-sms__wrapper_send-again" style="display: none;">
-                    <button class="cb-link-module confirmation-sms__btn" onclick="startTimerResendSms()">Отправить смс повторно</button>
+                    <button class="cb-link-module confirmation-sms__btn" onclick="resendSms()">Отправить смс повторно</button>
                   </div>
                   <p id="js_description_timer" class="confirmation-sms__description confirmation-sms__description_timer">SMS придёт в течение <span id="js_timer_code" class="confirmation-sms__description_timer"></span></p>
                   <div class="confirmation-sms__wrapper-btn">
@@ -61,9 +48,4 @@
     </div>
   </div>
 
-  <script src="./js/initSmsConfirmation.js"></script>
-  
-  
-
-</body>
-</html>
+  <script src="/js/init-sms-confirmation.js"></script>
