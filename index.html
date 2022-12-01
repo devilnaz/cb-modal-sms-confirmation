@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./css/creation-registration.css">
 
   <button onclick="openModalModule(this)" data-name="modal_warning">вызываем окно</button>
-  
+
   <div id="modal_warning" class="modal-module">
     <div class="modal-module__ground">
       <div class="modal-module__inner" href="#">
@@ -38,7 +38,7 @@
                   <h5 class="write-data__title">Для создания аккаунта осталось подтвердить номер телефона</h5>
                   <p class="write-data__description">Чтобы убедиться, что этот номер принадлежит вам, на него будет отправлено SMS с 4-х значным кодом подтверждения.</p>
                   <div class="write-data__wrapper-input">
-                    <input type="tel" class="cb-input-module write-data__phone" placeholder="+7">
+                    <input id="js_phone_input" type="tel" class="cb-input-module write-data__phone" placeholder="+7">
                   </div>
                   <div class="write-data__wrapper-btn">
                     <button class="cb-btn-module cb-btn-module_hover-light write-data__btn" onclick="goConfirmation()">Подтвердить</button>
@@ -48,7 +48,7 @@
               <div data-visibility="js_hide" class="creation-registration__sms-confirmation">
                 <div class="confirmation-sms">
                   <h5 class="confirmation-sms__title">Подтвердите данные</h5>
-                  <p class="confirmation-sms__description">Мы отправили SMS c кодом на номер <br><span class="confirmation-sms__description_phone">89063338079</span></p>
+                  <p class="confirmation-sms__description">Мы отправили SMS c кодом на номер <br><span id="js_phone_line" class="confirmation-sms__description_phone">89063338079</span></p>
                   <div class="confirmation-sms__wrapper-code">
                     <input class="cb-input-module confirmation-sms__code" type="text" maxlength="4" placeholder="____" onkeydown="return ( event.ctrlKey || event.altKey 
                     || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
@@ -78,53 +78,19 @@
     </div>
   </div>
 
-<script>
 
-
-openModalModule(document.querySelector('[data-name="modal_warning"]'));
-
-
-function openModalModule(elem) {
-  btnName = elem.getAttribute('data-name');
-  let modal = document.querySelector(`#${btnName}`);
-  
-  if (modal) {
-    document.body.style.cssText = `overflow: hidden;`;
-    
-    let ground = modal.querySelector('.modal-module__ground');
-    if (ground) {
-      ground.style.cssText = `visibility: visible; opacity: 1;`;
-    }
-    
-    let block = modal.querySelector('.modal-module__block');
-    if (block) {
-      block.style.cssText = `opacity: 1; transform: translateY(0);`;
-    }
-    
-    let btnClose = modal.querySelector('.modal-module__close');
-    if (btnClose) {
-      btnClose.addEventListener('click', function(event) {
-        event.preventDefault();
-        document.body.removeAttribute("style");
-        ground.removeAttribute("style");
-        block.removeAttribute("style");
-      })
-    }
-  } else {
-    console.warn('Проверьте атрибут id у модалки, либо правильность добавления data-name у кнопки');
-  }
-}
-
-
-</script>
-
-<!-- <script src="./js/sms-confirmation.js"></script> -->
-<script src="./example/js-inputmask.js"></script>
+<script src="./js/modal-module.js"></script>
 <script src="./js/creation-registration.js"></script>
+<script src="./js/phone-mask.js"></script>
 
 <script>
   
-// maskPhone('.phone');
+
+  
+  
+openModalModule(document.querySelector('[data-name="modal_warning"]'));
+maskPhone('.write-data__phone');
+
 </script>
 
 </body>
