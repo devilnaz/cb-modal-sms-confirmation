@@ -1,97 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Модуль</title>
-</head>
-<body>
-  
-  <link rel="stylesheet" href="./css/modal-module.css">
-  <link rel="stylesheet" href="./css/creation-registration.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Модуль</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="./css/modal-module.css" />
+    <link rel="stylesheet" href="./css/creation-registration.css" />
 
-  <button onclick="openModalModule(this)" data-name="modal_warning">вызываем окно</button>
+    <button onclick="openModalModule(this)" data-name="modal_warning">вызываем окно</button>
 
-  <div id="modal_warning" class="modal-module">
-    <div class="modal-module__ground">
-      <div class="modal-module__inner" href="#">
-        <div class="modal-module__block modal-module__block_creation-registration">
-          <button class="modal-module__close">
-            <svg class="modal-module__close-image" height="14px" version="1.1" viewBox="0 0 14 14" width="14px" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <title/>
-              <desc/>
-              <defs/>
+    <div id="modal_warning" class="modal-module">
+      <div class="modal-module__ground">
+        <div class="modal-module__inner" href="#">
+          <div class="modal-module__block modal-module__block_creation-registration">
+            <button class="modal-module__close">
+              <svg
+                class="modal-module__close-image"
+                height="14px"
+                version="1.1"
+                viewBox="0 0 14 14"
+                width="14px"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <title />
+                <desc />
+                <defs />
                 <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
                   <g fill="#000000" id="Core" transform="translate(-341.000000, -89.000000)">
                     <g id="close" transform="translate(341.000000, 89.000000)">
-                      <path d="M14,1.4 L12.6,0 L7,5.6 L1.4,0 L0,1.4 L5.6,7 L0,12.6 L1.4,14 L7,8.4 L12.6,14 L14,12.6 L8.4,7 L14,1.4 Z" id="Shape"/>
+                      <path d="M14,1.4 L12.6,0 L7,5.6 L1.4,0 L0,1.4 L5.6,7 L0,12.6 L1.4,14 L7,8.4 L12.6,14 L14,12.6 L8.4,7 L14,1.4 Z" id="Shape" />
                     </g>
                   </g>
                 </g>
-            </svg>
-          </button>
-          <div class="modal-module__content">
-            <div class="creation-registration" style="position: relative; overflow: hidden;">
-              <div data-visibility="js_show" class="creation-registration__data-write" style="visibility: hidden; opacity: 0; transform: translateX(100%); position: absolute;">
-                <div class="write-data">
-                  <h5 class="write-data__title">Для создания аккаунта осталось подтвердить номер телефона</h5>
-                  <p class="write-data__description">Чтобы убедиться, что этот номер принадлежит вам, на него будет отправлено SMS с 4-х значным кодом подтверждения.</p>
-                  <div class="write-data__wrapper-input">
-                    <input id="js_phone_input" type="tel" class="cb-input-module write-data__phone" placeholder="+7">
-                  </div>
-                  <div class="write-data__wrapper-btn">
-                    <button class="cb-btn-module cb-btn-module_hover-light write-data__btn" onclick="goConfirmation()">Подтвердить</button>
+              </svg>
+            </button>
+            <div class="modal-module__content">
+              <div class="creation-registration" style="position: relative; overflow: hidden">
+                <div data-visibility="js_show" class="creation-registration__data-write">
+                  <div class="write-data">
+                    <h5 class="write-data__title">Для создания аккаунта осталось подтвердить номер телефона</h5>
+                    <p class="write-data__description">
+                      Чтобы убедиться, что этот номер принадлежит вам, на него будет отправлено SMS с 4-х значным кодом подтверждения.
+                    </p>
+                    <div class="write-data__wrapper-input">
+                      <input id="js_phone_input" type="tel" class="cb-input-module write-data__phone" placeholder="+7" />
+                    </div>
+                    <div class="write-data__wrapper-btn">
+                      <button class="cb-btn-module cb-btn-module_hover-light write-data__btn" onclick="goConfirmation()">Подтвердить</button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div data-visibility="js_hide" class="creation-registration__sms-confirmation">
-                <div class="confirmation-sms">
-                  <h5 class="confirmation-sms__title">Подтвердите данные</h5>
-                  <p class="confirmation-sms__description">Мы отправили SMS c кодом на номер <br><span id="js_phone_line" class="confirmation-sms__description_phone">89063338079</span></p>
-                  <div class="confirmation-sms__wrapper-code">
-                    <input class="cb-input-module confirmation-sms__code" type="text" maxlength="4" placeholder="____" onkeydown="return ( event.ctrlKey || event.altKey 
+                <div
+                  data-visibility="js_hide"
+                  class="creation-registration__sms-confirmation"
+                  style="visibility: hidden; opacity: 0; transform: translateX(100%); position: absolute"
+                >
+                  <div class="confirmation-sms">
+                    <h5 class="confirmation-sms__title">Подтвердите данные</h5>
+                    <p class="confirmation-sms__description">
+                      Мы отправили SMS c кодом на номер <br /><span id="js_phone_line" class="confirmation-sms__description_phone">89063338079</span>
+                    </p>
+                    <div class="confirmation-sms__wrapper-code">
+                      <input
+                        class="cb-input-module confirmation-sms__code"
+                        type="text"
+                        maxlength="4"
+                        placeholder="____"
+                        onkeydown="return ( event.ctrlKey || event.altKey 
                     || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
                     || (95<event.keyCode && event.keyCode<106)
                     || (event.keyCode==8) || (event.keyCode==9) 
                     || (event.keyCode>34 && event.keyCode<40) 
-                    || (event.keyCode==46) )">
-                  </div>
-                  <div class="confirmation-sms__wrapper-link" style="display: none;">
-                    <button class="cb-link-module confirmation-sms__btn" >Отправить смс повторно</button>
-                  </div>
-                  <p class="confirmation-sms__description confirmation-sms__description_timer">SMS придёт в течение <span class="confirmation-sms__description_timer">01:59</span></p>
-                  <div class="confirmation-sms__wrapper-btn">
-                    <button id="js_btn_confirmation_sms" class="cb-btn-module cb-btn-module_disabled cb-btn-module_hover-dark confirmation-sms__btn">Продолжить</button>
-                  </div>
-                  <div class="confirmation-sms__wrapper-link confirmation-sms__wrapper-link_change-num">
-                    <button class="cb-link-module confirmation-sms__btn" onclick="goSetData()">Изменить номер</button>
+                    || (event.keyCode==46) )"
+                      />
+                    </div>
+                    <div class="confirmation-sms__wrapper-link" style="display: none">
+                      <button class="cb-link-module confirmation-sms__btn">Отправить смс повторно</button>
+                    </div>
+                    <p class="confirmation-sms__description confirmation-sms__description_timer">
+                      SMS придёт в течение <span class="confirmation-sms__description_timer">01:59</span>
+                    </p>
+                    <div class="confirmation-sms__wrapper-btn">
+                      <button id="js_btn_confirmation_sms" class="cb-btn-module cb-btn-module_disabled cb-btn-module_hover-dark confirmation-sms__btn">
+                        Продолжить
+                      </button>
+                    </div>
+                    <div class="confirmation-sms__wrapper-link confirmation-sms__wrapper-link_change-num">
+                      <button class="cb-link-module confirmation-sms__btn" onclick="goSetData()">Изменить номер</button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            
-            
           </div>
         </div>
       </div>
     </div>
-  </div>
 
+    <script src="./js/modal-module.js"></script>
+    <script src="./js/creation-registration.js"></script>
+    <script src="./js/phone-mask.js"></script>
 
-<script src="./js/modal-module.js"></script>
-<script src="./js/creation-registration.js"></script>
-<script src="./js/phone-mask.js"></script>
-
-<script>
-  
-
-  
-  
-openModalModule(document.querySelector('[data-name="modal_warning"]'));
-maskPhone('.write-data__phone');
-
-</script>
-
-</body>
+    <script>
+      openModalModule(document.querySelector('[data-name="modal_warning"]'));
+      maskPhone(".write-data__phone");
+    </script>
+  </body>
 </html>
